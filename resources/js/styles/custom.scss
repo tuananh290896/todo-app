@@ -1,0 +1,59 @@
+#app{
+  width: 100%;
+}
+
+body{
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.header{
+  background: linear-gradient(to right, #62BD5E 13%, #3EB7E2 83%);
+  .navbar-nav{
+    .nav-link{
+      color: #fff !important;
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+    }
+  }
+
+  .navbar-brand{
+    img{
+      height: 40px;
+    }
+  }
+}
+
+.page-content{
+  background-color: #fff;
+}
+
+.custom-control-label{
+  color: pointer;
+}
+
+.ant-form-explain{
+  margin-top: 0;
+  &:empty{
+    display: none;
+  }
+}
+
+.page, .content{
+  min-height: 100vh;
+}
+
+.empty{
+  text-align: center;
+  padding: 1rem 0;
+  img{
+    max-height: 400px;
+  }
+}
+
+.btn-normal{
+  padding: 10px 15px;
+  min-width: 100px;
+  height: auto;
+  border-radius: 0;
+}

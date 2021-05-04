@@ -1,0 +1,42 @@
+.bg-gray{
+  background: #020631;
+}
+
+.list{
+  max-width: 500px;
+  margin: auto;
+  &-logo{
+    text-align: center;
+    p{
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+  }
+}
+
+.ant-form-inline{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ant-form-item{
+  margin-right: 0 !important;
+  input{
+    height: 40px;
+    min-width: 250px
+  }
+}
+
+.btn-submit{
+  height: 40px;
+  min-width: 46px;
+}
+
+.ant-btn-loading{
+  .plus-icon{
+    display: none;
+  }
+}

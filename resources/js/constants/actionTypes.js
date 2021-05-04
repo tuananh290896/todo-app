@@ -1,0 +1,10 @@
+export const LOGOUT = 'logout';
+export const LOGIN = 'login';
+export const USER_INFO = 'GET_USER_INFO';
+export const USER_LOADING = 'USER_LOADING';
+export const ME = 'me';
+export const SET_AUTH = 'set_auth';
+export const SET_USER_INFO = 'SET_USER_INFO';
+export const SET_LOADING = 'SET_LOADING';
+export const CLEAR_AUTH = 'clear_auth';
+export const REGISTER = 'register';
