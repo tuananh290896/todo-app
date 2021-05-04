@@ -2,8 +2,8 @@
   <a-form :form="form" @submit="handleSubmit" layout="inline">
     <a-form-item>
       <a-input
-        v-decorator="['name']"
-        placeholder="✍️ Add item..."
+        v-decorator="['title']"
+        placeholder="✍️ Add note..."
       />
     </a-form-item>
     <a-button
@@ -18,6 +18,10 @@
 </template>
 
 <script>
+import { transformErrors } from "@utils/helper";
+import { NoteRepository } from '@repositories';
+const noteRepository = new NoteRepository();
+
 export default {
   name: "home-form-comp",
   props: {
@@ -28,7 +32,19 @@ export default {
       e.preventDefault();
       this.isLoading = true;
       let values = this.form.getFieldsValue();
-      console.log(values);
+      noteRepository.create(values)
+      .then((res) => {
+        this.form.resetFields();
+        this.$props.onSuccess();
+        this.isLoading = false;
+      })
+      .catch((err) => {
+          if(err.code == 422) {
+            const errors = transformErrors(err.message, values);
+            this.form.setFields(errors);
+          }
+          this.isLoading = false;
+      });
     },
   },
   data() {

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\AuthController;
+use App\Http\Controllers\Api\v1\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ Route::group(['prefix' => 'v1'], function () {
   Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'auth'], function () {
       Route::get('/me', [AuthController::class, 'me']);
+    });
+
+    Route::group(['prefix' => 'notes'], function () {
+      Route::get('/', [NoteController::class, 'index']);
+      Route::post('/store', [NoteController::class, 'store']);
+      Route::delete('/delete/{id}', [NoteController::class, 'destroy']);
     });
   });
 });

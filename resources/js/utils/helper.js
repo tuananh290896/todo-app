@@ -11,19 +11,4 @@ export function transformErrors(errors, values) {
   return errs;
 }
 
-export function getError(errors, key) {
-  if(!errors) return null;
-  if(!errors.hasOwnProperty(key)) return null;
-
-  return errors[key].pop();
-}
-
 export const strRandom = (length = 7) => Math.random().toString(36).substring(length)
-
-export function getOffset(el) {
-  const rect = el.getBoundingClientRect();
-  return {
-    x: rect.x + window.scrollX,
-    y: rect.y + window.scrollY
-  };
-}

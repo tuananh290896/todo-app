@@ -135,9 +135,7 @@ var authRepository = new _repositories__WEBPACK_IMPORTED_MODULE_3__.AuthReposito
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "transformErrors": () => (/* binding */ transformErrors),
-/* harmony export */   "getError": () => (/* binding */ getError),
-/* harmony export */   "strRandom": () => (/* binding */ strRandom),
-/* harmony export */   "getOffset": () => (/* binding */ getOffset)
+/* harmony export */   "strRandom": () => (/* binding */ strRandom)
 /* harmony export */ });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
@@ -160,22 +158,10 @@ function transformErrors(errors, values) {
   });
   return errs;
 }
-function getError(errors, key) {
-  if (!errors) return null;
-  if (!errors.hasOwnProperty(key)) return null;
-  return errors[key].pop();
-}
 var strRandom = function strRandom() {
   var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 7;
   return Math.random().toString(36).substring(length);
 };
-function getOffset(el) {
-  var rect = el.getBoundingClientRect();
-  return {
-    x: rect.x + window.scrollX,
-    y: rect.y + window.scrollY
-  };
-}
 
 /***/ }),
 

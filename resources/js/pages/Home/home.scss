@@ -40,3 +40,36 @@
     display: none;
   }
 }
+
+.list-scroll{
+  margin-top: 2rem;
+
+  .list-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #f5f5f5;
+    padding-bottom: 1rem;
+
+    color: #fff;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  
+    .ant-checkbox-wrapper{
+      color: #fff;
+    }
+  
+    .check-note {
+      flex: 0 0 80%;
+    }
+  }
+}
+
+
+.list-paginate{
+  margin-top: 2rem;
+  text-align: right;
+}
